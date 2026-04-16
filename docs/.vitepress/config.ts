@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  base: '/nicasa-support/',
+  // base: '/nicasa-support/',
   title: 'Nicasa',
   titleTemplate: 'Nicasa — :title',
   description: 'Nicasa Image Viewer — a native macOS app and Chrome extension for fast, focused image browsing.',
@@ -48,8 +48,37 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/nicasa-project/nicasa-support' }
     ],
     footer: {
-      message: 'Released under the ISC License.',
-      copyright: 'Copyright © 2026 Nicasa Project'
+      message: 'Built with ❤️ for image enthusiasts',
+      copyright: 'Copyright © 2026 Nicasa Project. All rights reserved.',
+      items: [
+        {
+          text: 'Product',
+          items: [
+            { text: 'Mac App', link: '/guide/installation' },
+            { text: 'Chrome Extension', link: '/guide/installation' },
+            { text: 'Features', link: '/#features' },
+            { text: 'Pricing', link: '/guide/installation' }
+          ]
+        },
+        {
+          text: 'Support',
+          items: [
+            { text: 'Documentation', link: '/guide/introduction' },
+            { text: 'FAQ', link: '/guide/faq' },
+            { text: 'Troubleshooting', link: '/guide/troubleshooting' },
+            { text: 'Contact', link: 'mailto:support@nicasa.app' }
+          ]
+        },
+        {
+          text: 'Company',
+          items: [
+            { text: 'About', link: '/guide/introduction' },
+            { text: 'Privacy Policy', link: '/guide/privacy' },
+            { text: 'Terms of Service', link: '/guide/terms' },
+            { text: 'GitHub', link: 'https://github.com/nicasa-project' }
+          ]
+        }
+      ]
     }
   }
 })

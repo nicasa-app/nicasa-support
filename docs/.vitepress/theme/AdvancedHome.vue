@@ -1,0 +1,949 @@
+<template>
+  <div class="advanced-home">
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <a href="/" class="brand-link">Nicasa</a>
+        </div>
+        <div class="nav-links">
+          <a href="/guide/introduction" class="nav-link">Guide</a>
+          <a href="/guide/faq" class="nav-link">FAQ</a>
+          <a href="https://github.com/nicasa-project/nicasa-support/blob/main/CHANGELOG.md" class="nav-link">Changelog</a>
+          <div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">Download ▼</button>
+            <div class="dropdown-menu">
+              <a href="/guide/installation" class="dropdown-item">Mac App Store</a>
+              <a href="/guide/installation" class="dropdown-item">Chrome Extension</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title">{{ data.hero.name }}</h1>
+            <p class="hero-subtitle">{{ data.hero.text }}</p>
+            <p class="hero-description">{{ data.hero.tagline }}</p>
+            <div class="hero-actions">
+              <a v-for="action in data.hero.actions" :key="action.text"
+                 :href="action.link"
+                 :class="['btn', action.theme === 'brand' ? 'btn-primary' : 'btn-secondary']">
+                {{ action.text }}
+              </a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="floating-elements">
+              <div class="floating-card card-1">
+                <div class="card-icon">🖼️</div>
+                <div class="card-text">Image Viewer</div>
+              </div>
+              <div class="floating-card card-2">
+                <div class="card-icon">⚡</div>
+                <div class="card-text">Lightning Fast</div>
+              </div>
+              <div class="floating-card card-3">
+                <div class="card-icon">🎨</div>
+                <div class="card-text">AI Enhanced</div>
+              </div>
+            </div>
+            <div class="hero-image">
+              <img :src="withBase(data.hero.image.src)" :alt="data.hero.image.alt" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-bg-pattern"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+      <div class="features-container">
+        <div class="section-header">
+          <h2 class="section-title">Powerful Features</h2>
+          <p class="section-subtitle">Everything you need for instant image viewing</p>
+        </div>
+        <div class="features-grid">
+          <div v-for="(feature, index) in data.features" :key="feature.title"
+               class="feature-card"
+               :style="{ animationDelay: `${index * 0.1}s` }">
+            <div class="feature-icon" :style="{ backgroundColor: featureColors[index % featureColors.length] }">
+              <img :src="withBase(feature.icon.light)" :alt="feature.icon.alt"
+                   :width="feature.icon.width" :height="feature.icon.height" />
+            </div>
+            <h3 class="feature-title">{{ feature.title }}</h3>
+            <p class="feature-description">{{ feature.details }}</p>
+            <a v-if="feature.link" :href="feature.link" class="feature-link">{{ feature.linkText }}</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+      <div class="testimonials-container">
+        <div class="section-header">
+          <h2 class="section-title">Loved by Users</h2>
+          <p class="section-subtitle">Real feedback from our community</p>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">Nicasa has transformed how I browse images online. It's incredibly fast and intuitive.</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">A</div>
+              <div class="author-info">
+                <div class="author-name">Alex Johnson</div>
+                <div class="author-role">Designer</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">The AI enhancement features are a game-changer. No more blurry images!</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">S</div>
+              <div class="author-info">
+                <div class="author-name">Sarah Chen</div>
+                <div class="author-role">Photographer</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">As a developer, I love the distraction-free interface. Pure focus on the content.</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">M</div>
+              <div class="author-info">
+                <div class="author-name">Mike Rodriguez</div>
+                <div class="author-role">Developer</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="faq-container">
+        <div class="section-header">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">Quick answers to common questions</p>
+        </div>
+        <div class="faq-grid">
+          <div v-for="faq in faqs" :key="faq.question" class="faq-item">
+            <details class="faq-details">
+              <summary class="faq-question">{{ faq.question }}</summary>
+              <div class="faq-answer">{{ faq.answer }}</div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-container">
+        <div class="cta-content">
+          <h2 class="cta-title">Ready to Experience Instant Image Viewing?</h2>
+          <p class="cta-description">Join thousands of users who have discovered a better way to browse images.</p>
+          <div class="cta-actions">
+            <a href="/guide/installation" class="btn btn-primary">Purchase for macOS</a>
+            <a href="/guide/installation" class="btn btn-secondary">Free Chrome Extension</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <div class="footer-logo">Nicasa</div>
+            <p class="footer-tagline">See every image, instantly.</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4 class="footer-heading">Product</h4>
+              <a href="/guide/installation" class="footer-link">Mac App</a>
+              <a href="/guide/installation" class="footer-link">Chrome Extension</a>
+              <a href="/#features" class="footer-link">Features</a>
+              <a href="/guide/installation" class="footer-link">Pricing</a>
+            </div>
+            <div class="footer-column">
+              <h4 class="footer-heading">Support</h4>
+              <a href="/guide/introduction" class="footer-link">Guide</a>
+              <a href="/guide/faq" class="footer-link">FAQ</a>
+              <a href="/guide/troubleshooting" class="footer-link">Troubleshooting</a>
+            </div>
+            <div class="footer-column">
+              <h4 class="footer-heading">Community</h4>
+              <a href="https://github.com/nicasa-project/nicasa-support" class="footer-link">GitHub</a>
+              <a href="https://github.com/nicasa-project/nicasa-support/blob/main/CHANGELOG.md" class="footer-link">Changelog</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-copyright">© 2026 Nicasa Project. Built with ❤️ for image enthusiasts.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { withBase } from 'vitepress'
+
+interface Props {
+  data: any
+}
+
+defineProps<Props>()
+
+// Feature colors for icons
+const featureColors = [
+  '#3b82f6', // blue
+  '#10b981', // green
+  '#f59e0b', // yellow
+  '#ef4444', // red
+  '#8b5cf6', // purple
+  '#06b6d4'  // cyan
+]
+
+// FAQ data
+const faqs = [
+  {
+    question: "Is Nicasa free?",
+    answer: "The Chrome extension is completely free to download and use. The macOS app requires a one-time purchase for full access to all features."
+  },
+  {
+    question: "Does it work on all websites?",
+    answer: "Nicasa works on most standard websites. Some sites with strict content security policies may limit image extraction."
+  },
+  {
+    question: "Is my data uploaded anywhere?",
+    answer: "No. All processing happens locally on your device. Nicasa does not collect, transmit, or store your images."
+  },
+  {
+    question: "Does it support offline viewing?",
+    answer: "Yes. The macOS app works fully offline for local image files. Web image extraction requires an active connection."
+  },
+  {
+    question: "Which macOS versions are supported?",
+    answer: "Nicasa supports macOS 12 Monterey and later. It is optimized for Apple Silicon and runs natively on M-series chips."
+  },
+  {
+    question: "What permissions does the Chrome extension need?",
+    answer: "The extension requests access to page content solely to extract image URLs. No browsing history is read or stored."
+  }
+]
+</script>
+
+<style scoped>
+.advanced-home {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: #1a1a1a;
+}
+
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.nav-brand .brand-link {
+  font-size: 24px;
+  font-weight: 700;
+  color: #000000;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-link {
+  color: #666666;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #000000;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  color: #666666;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  display: block;
+  padding: 12px 20px;
+  color: #666666;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background: #f8f9fa;
+  color: #000000;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 120px 0 100px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  margin: 0 0 20px;
+  line-height: 1.1;
+  color: #000000;
+  background: linear-gradient(135deg, #000000 0%, #333333 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 0 0 20px;
+  color: #333333;
+  opacity: 0.9;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  margin: 0 0 40px;
+  color: #666666;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 16px 32px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: #000000;
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+  background: #333333;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #000000;
+  border: 2px solid #000000;
+}
+
+.btn-secondary:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-elements {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.floating-card {
+  position: absolute;
+  background: white;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  animation: float 6s ease-in-out infinite;
+}
+
+.card-1 {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.card-2 {
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.card-3 {
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+.card-icon {
+  font-size: 18px;
+}
+
+.hero-image {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.hero-bg-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Features Section */
+.features-section {
+  padding: 120px 0;
+  background: #ffffff;
+}
+
+.features-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 16px;
+  color: #000000;
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  color: #666666;
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+}
+
+.feature-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: #e0e0e0;
+}
+
+.feature-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon img {
+  filter: brightness(0) invert(1);
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 16px;
+  color: #1a1a1a;
+  line-height: 1.3;
+}
+
+.feature-description {
+  color: #666666;
+  line-height: 1.6;
+  margin: 0 0 24px;
+  font-size: 1rem;
+}
+
+.feature-link {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.feature-link:hover {
+  color: #333333;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  padding: 120px 0;
+  background: #f8f9fa;
+}
+
+.testimonials-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+  position: relative;
+  border: 1px solid #f0f0f0;
+}
+
+.testimonial-quote {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 4rem;
+  color: #e5e5e5;
+  font-family: serif;
+  line-height: 1;
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333333;
+  margin: 0 0 30px;
+  padding-left: 40px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.author-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.author-info .author-name {
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.author-info .author-role {
+  font-size: 0.9rem;
+  color: #666666;
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 120px 0;
+  background: #ffffff;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.faq-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.faq-item {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.faq-details {
+  width: 100%;
+}
+
+.faq-question {
+  padding: 24px 30px;
+  background: #f8f9fa;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  border: none;
+  outline: none;
+  transition: background-color 0.2s;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.faq-question:hover {
+  background: #e9ecef;
+}
+
+.faq-question::after {
+  content: '+';
+  font-size: 18px;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.faq-details[open] .faq-question::after {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  padding: 0 30px 24px;
+  color: #666666;
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 120px 0;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  color: #ffffff;
+}
+
+.cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 20px;
+  line-height: 1.2;
+}
+
+.cta-description {
+  font-size: 1.25rem;
+  margin: 0 0 40px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Footer */
+.footer {
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 80px 0 40px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 80px;
+  margin-bottom: 40px;
+}
+
+.footer-brand .footer-logo {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.footer-tagline {
+  color: #cccccc;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+}
+
+.footer-heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 20px;
+  color: #ffffff;
+}
+
+.footer-link {
+  display: block;
+  color: #cccccc;
+  text-decoration: none;
+  margin-bottom: 12px;
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333333;
+  padding-top: 40px;
+  text-align: center;
+}
+
+.footer-copyright {
+  margin: 0;
+  color: #999999;
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(2deg); }
+  66% { transform: translateY(5px) rotate(-2deg); }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 2rem;
+  }
+
+  .features-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero-section {
+    padding: 100px 0 60px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.75rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .features-section,
+  .testimonials-section,
+  .faq-section,
+  .cta-section {
+    padding: 80px 0;
+  }
+
+  .cta-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-actions,
+  .cta-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
+</style>

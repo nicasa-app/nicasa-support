@@ -3,17 +3,17 @@ layout: home
 
 hero:
   name: "Nicasa"
-  text: "Image viewer"
-  tagline: "Brings a smooth, modern image-viewing experience."
+  text: "See every image, instantly."
+  tagline: "A native macOS app and Chrome extension built for fast, focused image browsing. Mac app requires purchase, Chrome extension is free."
   image:
     src: /hero-illustration.svg
     alt: Nicasa Image Viewer Illustration
   actions:
     - theme: brand
-      text: Download for macOS
+      text: Purchase for macOS
       link: /guide/installation
     - theme: alt
-      text: Install Chrome Extension
+      text: Free Chrome Extension
       link: /guide/installation
 
 features:
@@ -78,36 +78,4 @@ features:
     link: /guide/introduction
     linkText: About Nicasa
 ---
-
-
-<div class="home-faq-section">
-  <p class="home-section-title">Frequently Asked Questions</p>
-  <p class="home-section-subtitle">Quick answers to common questions.</p>
-  <div class="faq-list">
-    <details class="faq-item">
-      <summary>Is Nicasa free?</summary>
-      <p class="faq-answer">Yes. The core app and Chrome extension are free to download and use. Some advanced AI features may be available as a one-time upgrade.</p>
-    </details>
-    <details class="faq-item">
-      <summary>Does it work on all websites?</summary>
-      <p class="faq-answer">Nicasa works on most standard websites. Some sites with strict content security policies may limit image extraction.</p>
-    </details>
-    <details class="faq-item">
-      <summary>Is my data uploaded anywhere?</summary>
-      <p class="faq-answer">No. All processing happens locally on your device. Nicasa does not collect, transmit, or store your images.</p>
-    </details>
-    <details class="faq-item">
-      <summary>Does it support offline viewing?</summary>
-      <p class="faq-answer">Yes. The macOS app works fully offline for local image files. Web image extraction requires an active connection.</p>
-    </details>
-    <details class="faq-item">
-      <summary>Which macOS versions are supported?</summary>
-      <p class="faq-answer">Nicasa supports macOS 12 Monterey and later. It is optimized for Apple Silicon and runs natively on M-series chips.</p>
-    </details>
-    <details class="faq-item">
-      <summary>What permissions does the Chrome extension need?</summary>
-      <p class="faq-answer">The extension requests access to page content solely to extract image URLs. No browsing history is read or stored.</p>
-    </details>
-  </div>
-</div>
 
