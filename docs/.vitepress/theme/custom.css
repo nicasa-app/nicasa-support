@@ -1,0 +1,314 @@
+/* =============================================================
+   Nicasa — Home Page Styles
+   Compatible with VitePress default theme (light + dark)
+   ============================================================= */
+
+/* ─── Hero background glow ──────────────────────────────────── */
+
+.VPHero {
+  position: relative;
+  overflow: hidden;
+}
+
+.VPHero::before {
+  content: '';
+  position: absolute;
+  top: -160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 700px;
+  background: radial-gradient(
+    ellipse at center,
+    color-mix(in srgb, var(--vp-c-brand-1) 14%, transparent) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.VPHero .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Hero image — drop shadow + rounded ───────────────────── */
+
+.VPHero .image-container img {
+  border-radius: 14px;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    0 12px 40px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(0, 0, 0, 0.04);
+}
+
+.dark .VPHero .image-container img {
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    0 16px 48px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+/* ─── Hero name gradient ────────────────────────────────────── */
+
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(135deg, #2d6cdf 0%, #a855f7 100%);
+}
+
+/* ─── Hide default action buttons — store badges replace them ─ */
+
+.VPHero .actions {
+  display: none;
+}
+
+/* ─── Hero text ─────────────────────────────────────────────── */
+
+.VPHero .tagline {
+  font-size: 17px;
+  line-height: 1.65;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ─── Store badges ───────────────────────────────────────────── */
+
+.home-badge-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 36px;
+  justify-content: center;
+}
+
+.VPHero.has-image .home-badge-row {
+  justify-content: flex-start;
+}
+
+.store-badge-link {
+  display: inline-flex;
+  border-radius: 10px;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  outline-offset: 3px;
+}
+
+.store-badge-link:hover {
+  opacity: 0.82;
+  transform: translateY(-1px);
+}
+
+.store-badge-link:active {
+  opacity: 0.65;
+  transform: translateY(0);
+}
+
+.store-badge {
+  display: block;
+  height: 46px;
+  width: auto;
+}
+
+.dark .store-badge {
+  filter: invert(1) brightness(0.92);
+}
+
+/* ─── Features section ──────────────────────────────────────── */
+
+.VPFeatures .VPFeature {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 28px 24px;
+  transition: border-color 0.2s ease;
+}
+
+.VPFeatures .VPFeature:hover {
+  border-color: var(--vp-c-brand-1);
+}
+
+.VPFeatures .VPFeature h2 {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.VPFeatures .VPFeature p {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--vp-c-text-2);
+  margin-top: 8px;
+}
+
+/* ─── Feature icons ─────────────────────────────────────────── */
+
+.VPFeature .icon {
+  background-color: var(--vp-c-brand-soft);
+  border-radius: 10px;
+  transition: background-color 0.25s;
+}
+
+.VPFeature .icon img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* ─── Home content (below features) ────────────────────────── */
+
+.VPHomeContent {
+  padding: 80px 0 120px;
+}
+
+.VPHomeContent .container {
+  max-width: 900px;
+}
+
+/* ─── Section titles ────────────────────────────────────────── */
+
+.home-section-title {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--vp-c-text-1);
+  text-align: center;
+  margin: 0 0 12px;
+}
+
+.home-section-subtitle {
+  font-size: 15px;
+  color: var(--vp-c-text-2);
+  text-align: center;
+  margin: 0 0 56px;
+  line-height: 1.6;
+}
+
+/* ─── How It Works ──────────────────────────────────────────── */
+
+.home-how-section {
+  margin-bottom: 96px;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 0;
+}
+
+.step {
+  padding: 28px 24px;
+  background: var(--vp-c-bg-soft);
+  border-radius: 12px;
+  border: 1px solid var(--vp-c-divider);
+}
+
+.step-number {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--vp-c-brand-1);
+  margin-bottom: 16px;
+}
+
+.step h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  margin: 0 0 10px;
+  border: none !important;
+  padding: 0 !important;
+  letter-spacing: -0.01em;
+}
+
+.step p {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--vp-c-text-2);
+  margin: 0;
+}
+
+/* ─── FAQ ───────────────────────────────────────────────────── */
+
+.home-faq-section {
+  margin-bottom: 80px;
+}
+
+.faq-list {
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+details.faq-item {
+  border-bottom: 1px solid var(--vp-c-divider);
+  padding: 0;
+  margin: 0;
+}
+
+details.faq-item summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 4px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+  cursor: pointer;
+  user-select: none;
+  gap: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+details.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+details.faq-item summary::after {
+  content: '+';
+  flex-shrink: 0;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--vp-c-text-3);
+  transition: color 0.2s ease;
+}
+
+details.faq-item[open] summary::after {
+  content: '\2212';
+  color: var(--vp-c-brand-1);
+}
+
+details.faq-item .faq-answer {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--vp-c-text-2);
+  padding: 4px 4px 24px;
+  max-width: 680px;
+}
+
+/* ─── Responsive ────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .home-section-title {
+    font-size: 22px;
+  }
+
+  .VPHomeContent {
+    padding: 60px 0 80px;
+  }
+
+  .home-badge-row {
+    gap: 10px;
+  }
+
+  .store-badge {
+    height: 40px;
+  }
+}
