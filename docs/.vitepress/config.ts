@@ -7,12 +7,36 @@ export default defineConfig({
   description: 'Nicasa Image Viewer — a native macOS app and Chrome extension for fast, focused image browsing.',
   lastUpdated: true,
   head: [
+    // Favicons
+    ['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }],
+    ['link', { rel: 'apple-touch-icon', href: '/logo.png' }],
+    
+    // Theme and viewport
     ['meta', { name: 'theme-color', content: '#ffffff' }],
+    ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }],
+    
+    // SEO
+    ['meta', { name: 'keywords', content: 'nicasa, image viewer, mac app, chrome extension, image browsing, photo viewer' }],
+    ['meta', { name: 'author', content: 'Nicasa Project' }],
+    
+    // Open Graph / Facebook
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'Nicasa Image Viewer' }],
-    ['meta', { property: 'og:description', content: 'See every image, instantly. A native macOS app and Chrome extension built for fast, focused image browsing.' }],
-    ['meta', { property: 'og:image', content: 'https://nicasa-project.github.io/nicasa-support/hero-screenshot.png' }],
+    ['meta', { property: 'og:site_name', content: 'Nicasa' }],
+    ['meta', { property: 'og:url', content: 'https://nicasa.w3cub.com/' }],
+    ['meta', { property: 'og:title', content: 'Nicasa Image Viewer — See every image, instantly' }],
+    ['meta', { property: 'og:description', content: 'A native macOS app and Chrome extension for fast, focused image browsing. Experience smooth, modern image viewing on your desktop.' }],
+    ['meta', { property: 'og:image', content: 'https://nicasa.w3cub.com/preview.png' }],
+    ['meta', { property: 'og:image:width', content: '1200' }],
+    ['meta', { property: 'og:image:height', content: '630' }],
+    ['meta', { property: 'og:image:alt', content: 'Nicasa Image Viewer Preview' }],
+    
+    // Twitter Card
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:url', content: 'https://nicasa.w3cub.com/' }],
+    ['meta', { name: 'twitter:title', content: 'Nicasa Image Viewer — See every image, instantly' }],
+    ['meta', { name: 'twitter:description', content: 'A native macOS app and Chrome extension for fast, focused image browsing.' }],
+    ['meta', { name: 'twitter:image', content: 'https://nicasa.w3cub.com/preview.png' }],
+    ['meta', { name: 'twitter:image:alt', content: 'Nicasa Image Viewer Preview' }],
   ],
   themeConfig: {
     siteTitle: 'Nicasa',
