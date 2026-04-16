@@ -8,10 +8,6 @@
         </div>
         <div class="nav-links">
           <VPNavBarMenu />
-          <!-- <template v-for="item in navItems" :key="item.text">
-            <VPNavBarMenuLink v-if="item.link" :item="item as any" />
-            <VPNavBarMenuGroup v-else :item="item as any" />
-          </template> -->
         </div>
       </div>
     </nav>

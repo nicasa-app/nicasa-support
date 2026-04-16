@@ -27,8 +27,8 @@ export default defineConfig({
       {
         text: 'Download',
         items: [
-          { text: 'Mac App Store', link: '/guide/installation' },
-          { text: 'Chrome Extension', link: '/guide/installation' },
+          { text: 'Mac App Store', link: 'https://apps.apple.com/app/apple-store/id6756032669?pt=128326876&ct=officiallnk&mt=8' },
+          { text: 'Chrome Extension', link: 'https://chromewebstore.google.com/detail/nicasa-Image-viewer/cihceekeiedkinpjjjfehlgjdhpeokbj' },
         ]
       },
     ],
