@@ -30,6 +30,8 @@ jobs:
         run: pnpm install
       - name: Build
         run: pnpm docs:build
+      - name: Add CNAME
+        run: echo "nicasa.w3cub.com" > docs/.vitepress/dist/CNAME
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:

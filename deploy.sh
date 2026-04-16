@@ -42,6 +42,10 @@ rm -rf `find . -maxdepth 1 ! -name .git ! -name .`
 echo "📋 Copying built files..."
 cp -rf ../../docs/.vitepress/dist/* .
 
+# Add CNAME file for custom domain
+echo "🌐 Adding CNAME file..."
+echo "nicasa.w3cub.com" > CNAME
+
 # Add and commit
 echo "📝 Committing changes..."
 git add -A .
@@ -63,4 +67,4 @@ cd ../..
 rm -rf temp_deploy
 
 echo "🎉 Deployment completed successfully!"
-echo "📖 Documentation available at: https://nicasa-project.github.io/nicasa-support/"
+echo "📖 Documentation available at: https://nicasa.w3cub.com/"

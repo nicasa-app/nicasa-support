@@ -13,7 +13,7 @@ This site is built with [VitePress](https://vitepress.dev/) and contains compreh
 ### Getting Help
 
 - **Submit Issues**: Report bugs or request features at [GitHub Issues](https://github.com/nicasa-project/nicasa-support/issues)
-- **Documentation**: Browse the full documentation at [nicasa-support.pages.dev](https://nicasa-support.pages.dev) (when deployed)
+- **Documentation**: Browse the full documentation at [nicasa.w3cub.com](https://nicasa.w3cub.com)
 - **Wiki**: Additional resources in the GitHub Wiki
 
 ## Development
@@ -67,13 +67,14 @@ The repository includes a GitHub Actions workflow that automatically:
 
 - Builds the documentation on every push to `main`
 - Deploys to GitHub Pages
-- Makes the site available at `https://nicasa-project.github.io/nicasa-support`
+- Makes the site available at `https://nicasa.w3cub.com` (custom domain)
 
 To enable GitHub Pages:
 
 1. Go to repository Settings > Pages
 2. Select "GitHub Actions" as the source
-3. The site will be available at the provided URL
+3. Configure custom domain to `nicasa.w3cub.com`
+4. Ensure DNS records are properly configured
 
 ## Contributing
 
