@@ -4,19 +4,14 @@
     <nav class="navbar">
       <div class="nav-container">
         <div class="nav-brand">
-          <a href="/" class="brand-link">Nicasa</a>
+          <VPLink href="/" class="brand-link">Nicasa</VPLink>
         </div>
         <div class="nav-links">
-          <a href="/guide/introduction" class="nav-link">Guide</a>
-          <a href="/guide/faq" class="nav-link">FAQ</a>
-          <a href="https://github.com/nicasa-project/nicasa-support/blob/main/CHANGELOG.md" class="nav-link">Changelog</a>
-          <div class="nav-dropdown">
-            <button class="nav-link dropdown-toggle">Download ▼</button>
-            <div class="dropdown-menu">
-              <a href="/guide/installation" class="dropdown-item">Mac App Store</a>
-              <a href="/guide/installation" class="dropdown-item">Chrome Extension</a>
-            </div>
-          </div>
+          <VPNavBarMenu />
+          <!-- <template v-for="item in navItems" :key="item.text">
+            <VPNavBarMenuLink v-if="item.link" :item="item as any" />
+            <VPNavBarMenuGroup v-else :item="item as any" />
+          </template> -->
         </div>
       </div>
     </nav>
@@ -30,11 +25,8 @@
             <p class="hero-subtitle">{{ data.hero.text }}</p>
             <p class="hero-description">{{ data.hero.tagline }}</p>
             <div class="hero-actions">
-              <a v-for="action in data.hero.actions" :key="action.text"
-                 :href="action.link"
-                 :class="['btn', action.theme === 'brand' ? 'btn-primary' : 'btn-secondary']">
-                {{ action.text }}
-              </a>
+              <!-- 使用 HomeActions 组件 -->
+              <HomeActions />
             </div>
           </div>
           <div class="hero-visual">
@@ -71,8 +63,8 @@
         <div class="features-grid">
           <div v-for="(feature, index) in data.features" :key="feature.title"
                class="feature-card"
-               :style="{ animationDelay: `${index * 0.1}s` }">
-            <div class="feature-icon" :style="{ backgroundColor: featureColors[index % featureColors.length] }">
+               :style="{ animationDelay: `${(index as number) * 0.1}s` }">
+            <div class="feature-icon" :style="{ backgroundColor: featureColors[(index as number) % featureColors.length] }">
               <img :src="withBase(feature.icon.light)" :alt="feature.icon.alt"
                    :width="feature.icon.width" :height="feature.icon.height" />
             </div>
@@ -200,12 +192,16 @@
 
 <script setup lang="ts">
 import { withBase } from 'vitepress'
+import HomeActions from './HomeActions.vue'
+import { VPLink } from 'vitepress/theme'
+import VPNavBarMenu from 'vitepress/dist/client/theme-default/components/VPNavBarMenu.vue'
 
 interface Props {
   data: any
 }
 
 defineProps<Props>()
+
 
 // Feature colors for icons
 const featureColors = [
@@ -284,20 +280,15 @@ const faqs = [
 }
 
 .nav-links {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 30px;
 }
 
-.nav-link {
-  color: #666666;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.nav-link:hover {
-  color: #000000;
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+  }
 }
 
 .dropdown-toggle {
@@ -396,9 +387,7 @@ const faqs = [
 }
 
 .hero-actions {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  margin-top: 40px;
 }
 
 .btn {
@@ -436,6 +425,28 @@ const faqs = [
 .btn-secondary:hover {
   background: #000000;
   color: #ffffff;
+}
+
+/* HomeActions 组件样式 */
+.home-badge-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 36px;
+  justify-content: left;
+}
+
+.store-badge-link {
+  display: inline-flex;
+  border-radius: 10px;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  outline-offset: 3px;
+}
+
+.store-badge-link:hover {
+  opacity: 0.82;
+  transform: translateY(-1px);
 }
 
 .hero-visual {
