@@ -312,3 +312,130 @@ details.faq-item .faq-answer {
     height: 40px;
   }
 }
+
+/* ─── Testimonials Section ──────────────────────────────────── */
+
+.home-testimonials-section {
+  margin-bottom: 96px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-top: 0;
+}
+
+.testimonial {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 28px 24px;
+  text-align: center;
+  transition: border-color 0.2s ease;
+}
+
+.testimonial:hover {
+  border-color: var(--vp-c-brand-1);
+}
+
+.testimonial blockquote {
+  margin: 0;
+}
+
+.testimonial p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--vp-c-text-2);
+  margin-bottom: 16px;
+}
+
+.testimonial cite {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--vp-c-text-3);
+  font-style: normal;
+}
+
+/* ─── Call to Action Section ────────────────────────────────── */
+
+.home-cta-section {
+  background: linear-gradient(135deg, var(--vp-c-brand-1) 0%, var(--vp-c-brand-2) 100%);
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+  border-radius: 16px;
+  margin: 0 24px;
+}
+
+.cta-content h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 16px;
+  letter-spacing: -0.025em;
+}
+
+.cta-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 32px;
+  opacity: 0.9;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.cta-button.primary {
+  background: white;
+  color: var(--vp-c-brand-1);
+}
+
+.cta-button.primary:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cta-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .home-cta-section {
+    margin: 0 16px;
+    padding: 60px 20px;
+  }
+
+  .cta-content h2 {
+    font-size: 24px;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-button {
+    width: 200px;
+  }
+}

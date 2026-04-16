@@ -3,12 +3,11 @@ layout: home
 
 hero:
   name: "Nicasa"
-  text: "See every image, instantly."
-  tagline: "A native macOS app and Chrome extension built for fast, focused image browsing. Free and lightweight."
+  text: "Image viewer"
+  tagline: "Brings a smooth, modern image-viewing experience."
   image:
-    light: /hero-screenshot-light.png
-    dark: /hero-screenshot-dark.png
-    alt: Nicasa Image Viewer
+    src: /hero-illustration.svg
+    alt: Nicasa Image Viewer Illustration
   actions:
     - theme: brand
       text: Download for macOS
@@ -80,27 +79,6 @@ features:
     linkText: About Nicasa
 ---
 
-<div class="home-how-section">
-  <p class="home-section-title">How It Works</p>
-  <p class="home-section-subtitle">Three steps. No setup required.</p>
-  <div class="steps-grid">
-    <div class="step">
-      <div class="step-number">Step 01</div>
-      <h3>Open any website or image</h3>
-      <p>Navigate to any page, gallery, or local file you want to explore.</p>
-    </div>
-    <div class="step">
-      <div class="step-number">Step 02</div>
-      <h3>Activate Nicasa</h3>
-      <p>Click the Chrome extension icon or launch the macOS app. No configuration needed.</p>
-    </div>
-    <div class="step">
-      <div class="step-number">Step 03</div>
-      <h3>Browse all images instantly</h3>
-      <p>Every image is extracted, organized, and ready to view in a clean interface.</p>
-    </div>
-  </div>
-</div>
 
 <div class="home-faq-section">
   <p class="home-section-title">Frequently Asked Questions</p>
