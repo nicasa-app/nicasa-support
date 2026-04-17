@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.32] - 2026-04-16
+
+### Added
+- Improved browser extension integration for a smoother experience when opening images
+- Better compatibility with more websites when loading images
+- Faster and smoother image browsing performance
+- More accurate image sorting to match your system view
+- Improved overall interaction and editing experience
+- Enhanced macOS compatibility and stability
+- General bug fixes and performance improvements
+
 ## [1.0.0] - 2025-12-11
 
 ### Added
@@ -12,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Complete VitePress setup with TypeScript configuration
 - Comprehensive user guides:
   - Introduction to Nicasa
-  - Installation instructions for all platforms
+  - Installation instructions for macOS
   - Usage guide with keyboard shortcuts
   - Troubleshooting section
   - Frequently Asked Questions

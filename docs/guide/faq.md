@@ -4,49 +4,80 @@
 
 ### What is Nicasa?
 
-Nicasa is a modern desktop application for viewing and managing image collections. It provides a smooth, intuitive interface for browsing photos and digital images.
+Nicasa is a modern desktop image viewer and screenshot tool designed exclusively for macOS. It provides fast, intuitive navigation through your image collections with a clean, responsive interface and powerful AI editing capabilities.
 
 ### Is Nicasa free?
 
-Yes, Nicasa is free to download and use. It's an open-source project.
+The Chrome extension is completely free to download and use. The macOS app requires a one-time purchase of $4.99 for full access to all features.
 
 ### Which operating systems are supported?
 
-Nicasa supports Windows 10+, macOS 10.15+, and Linux distributions like Ubuntu 18.04+.
+Nicasa is currently available exclusively for macOS 10.13 or later. Windows and Linux versions are not available at this time.
 
 ### How do I update Nicasa?
 
-The application will notify you when updates are available. You can also check for updates manually through Help > Check for Updates.
+Updates are handled through the Mac App Store. You'll receive notifications when updates are available, and can update directly through the App Store application.
 
 ## Usage Questions
 
-### How do I open multiple folders?
+### How do I take screenshots with Nicasa?
 
-Currently, Nicasa works with one folder at a time. You can switch between folders using File > Open Folder.
+1. Launch Nicasa
+2. Click the screenshot button in the toolbar or use `Cmd+S`
+3. Select the area you want to capture
+4. The screenshot will open in Nicasa for immediate editing
 
-### Can I edit images in Nicasa?
+### Does Nicasa work with web images?
 
-Nicasa provides basic editing features like rotation and flipping. For advanced editing, we recommend using dedicated image editing software.
+Yes! Install the free Nicasa Chrome extension to:
+- View all images from any website in one place
+- Extract and browse images instantly
+- Open images directly in Nicasa for enhanced viewing
 
-### Does Nicasa support RAW files?
+### What AI editing features are available?
 
-Not currently, but this is planned for a future release. For now, RAW files need to be converted to standard formats.
+Nicasa includes powerful AI tools:
+- **Auto Enhance**: Automatically improve image quality
+- **Smart Crop**: Intelligent cropping suggestions
+- **Inpainting**: Remove unwanted objects intelligently
+- **Color Correction**: AI-powered color adjustments
+- **Noise Reduction**: Remove noise and grain
 
-### How do I create a slideshow?
+### How does Transparent Overlay Mode work?
 
-Use View > Slideshow or press F5. You can configure slideshow settings in Preferences.
+Perfect for designers and artists:
+- Pin images above all windows with adjustable transparency
+- Use for tracing, reference work, or UI comparison
+- Maintains position across all applications
 
 ## Technical Questions
 
-### Why are thumbnails not showing?
+### Why do I need to grant screen recording permission?
 
-This could be due to file permissions, corrupted files, or unsupported formats. Try the solutions in our [Troubleshooting guide](troubleshooting.md).
+Screen recording permission is required for the screenshot functionality. This allows Nicasa to capture your screen when you use the screenshot tool.
 
-### Can I change the interface language?
+### Can I use Nicasa offline?
 
-Language support is planned for future versions. Currently, Nicasa uses your system language where possible.
+Yes. The macOS app works fully offline for local image files. Web image extraction through the Chrome extension requires an active internet connection.
+
+### Which macOS versions are supported?
+
+Nicasa supports macOS 10.13 or later. It is optimized for Apple Silicon and runs natively on M-series chips.
+
+### What permissions does the Chrome extension need?
+
+The extension requests access to page content solely to extract image URLs. No browsing history is read or stored.
+
+### Is my data uploaded anywhere?
+
+No. All processing happens locally on your device. Nicasa does not collect, transmit, or store your images.
 
 ### How do I backup my settings?
+
+Your settings are stored locally. To backup:
+1. Go to Nicasa > Preferences
+2. Export your settings if available
+3. Or manually backup the application preferences folder
 
 Settings are stored in the application data folder. Copy this folder to backup your preferences.
 

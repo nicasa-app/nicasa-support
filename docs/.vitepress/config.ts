@@ -63,8 +63,17 @@ export default defineConfig({
           { text: 'Introduction', link: '/guide/introduction' },
           { text: 'Installation', link: '/guide/installation' },
           { text: 'Usage', link: '/guide/usage' },
+          { text: 'Finder Sync Extension', link: '/guide/finder-sync' },
+          { text: 'Screen Recording Permission', link: '/guide/screen-recording' },
           { text: 'Troubleshooting', link: '/guide/troubleshooting' },
           { text: 'FAQ', link: '/guide/faq' }
+        ]
+      },
+      {
+        text: 'Legal',
+        items: [
+          { text: 'Privacy Policy', link: '/guide/privacy' },
+          { text: 'Terms of Service', link: '/guide/terms' }
         ]
       }
     ],
