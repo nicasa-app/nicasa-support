@@ -40,6 +40,7 @@ export default defineConfig({
   ],
   themeConfig: {
     siteTitle: 'Nicasa',
+    logo: '/logo.png',
     search: {
       provider: 'local'
     },

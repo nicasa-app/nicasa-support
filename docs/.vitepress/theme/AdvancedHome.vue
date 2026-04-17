@@ -4,7 +4,10 @@
     <nav class="navbar">
       <div class="nav-container">
         <div class="nav-brand">
-          <VPLink href="/" class="brand-link">Nicasa</VPLink>
+          <VPLink href="/" class="brand-link">
+            <img src="/logo.png" alt="Nicasa Logo" class="brand-logo" />
+            <span class="brand-text">Nicasa</span>
+          </VPLink>
         </div>
         <div class="nav-links">
           <VPNavBarMenu />
@@ -269,10 +272,24 @@ const faqs = [
 }
 
 .nav-brand .brand-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-size: 24px;
   font-weight: 700;
   color: #000000;
   text-decoration: none;
+}
+
+.brand-logo {
+  height: 32px;
+  width: auto;
+}
+
+.brand-text {
+  font-size: 24px;
+  font-weight: 700;
+  color: #000000;
 }
 
 .nav-links {
