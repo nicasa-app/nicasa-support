@@ -18,7 +18,7 @@ import { withBase } from 'vitepress'
       />
     </a>
     <a
-      href="https://chromewebstore.google.com/detail/nicasa-Image-viewer/cihceekeiedkinpjjjfehlgjdhpeokbj" target="_blank" rel="noopener noreferrer"
+      href="https://chromewebstore.google.com/detail/nicasa-image-viewer/cihceekeiedkinpjjjfehlgjdhpeokbj" target="_blank" rel="noopener noreferrer"
       class="store-badge-link"
       aria-label="Get it on the Chrome Web Store"
     >

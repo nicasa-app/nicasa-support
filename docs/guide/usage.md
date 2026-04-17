@@ -105,7 +105,7 @@ Perfect for designers and artists:
 
 ### Installation
 
-1. Install the [Nicasa Chrome Extension](https://chromewebstore.google.com/detail/nicasa-Image-viewer/cihceekeiedkinpjjjfehlgjdhpeokbj)
+1. Install the [Nicasa Chrome Extension](https://chromewebstore.google.com/detail/nicasa-image-viewer/cihceekeiedkinpjjjfehlgjdhpeokbj)
 2. The extension icon will appear in your browser toolbar
 
 ### Usage

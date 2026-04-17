@@ -35,7 +35,7 @@ pnpm install
 pnpm docs:dev
 ```
 
-This will start a local development server at `http://localhost:4173`.
+This will start a local development server at `http://localhost:5173`.
 
 ### Build
 

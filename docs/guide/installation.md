@@ -7,7 +7,7 @@ Nicasa is available exclusively for macOS through the Mac App Store. The app cos
 ### Download Options
 
 - **Mac App Store**: [Download Nicasa](https://apps.apple.com/us/app/nicasa-image-viewer/id6756032669?mt=12) - $4.99
-- **Chrome Extension**: [Free Chrome Extension](https://chromewebstore.google.com/detail/nicasa-Image-viewer/cihceekeiedkinpjjjfehlgjdhpeokbj) - Free
+- **Chrome Extension**: [Free Chrome Extension](https://chromewebstore.google.com/detail/nicasa-image-viewer/cihceekeiedkinpjjjfehlgjdhpeokbj) - Free
 
 ## Installation Steps
 
@@ -20,7 +20,7 @@ Nicasa is available exclusively for macOS through the Mac App Store. The app cos
 
 ### Chrome Extension Installation
 
-1. Visit the [Chrome Web Store page](https://chromewebstore.google.com/detail/nicasa-Image-viewer/cihceekeiedkinpjjjfehlgjdhpeokbj)
+1. Visit the [Chrome Web Store page](https://chromewebstore.google.com/detail/nicasa-image-viewer/cihceekeiedkinpjjjfehlgjdhpeokbj)
 2. Click "Add to Chrome"
 3. Confirm the installation in the popup
 4. The extension will be added to your browser

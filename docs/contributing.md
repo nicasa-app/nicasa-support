@@ -45,7 +45,7 @@ We welcome contributions to improve the Nicasa Support documentation! Whether yo
    ```bash
    pnpm docs:dev
    ```
-5. **Open** `http://localhost:4173` in your browser
+5. **Open** `http://localhost:5173` in your browser
 
 ### Making Changes
 
