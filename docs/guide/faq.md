@@ -89,7 +89,7 @@ A portable version is available for Windows. Download it from our website.
 
 ### Can I contribute to Nicasa?
 
-Yes! Nicasa is open source. Visit our [GitHub repository](https://github.com/nicasa-project/nicasa) to contribute code, report issues, or suggest features.
+Visit our [GitHub repository](https://github.com/nicasa-project/nicasa-support) to contribute code, report issues, or suggest features.
 
 ### How do I build Nicasa from source?
 
