@@ -87,4 +87,6 @@ We welcome contributions to improve the documentation:
 
 ## License
 
-This documentation is licensed under the MIT License.
+This documentation is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](https://creativecommons.org/licenses/by-nc-nd/4.0/) (CC BY-NC-ND 4.0).
+
+You may share this material with attribution, but commercial use and derivative works are not permitted.
