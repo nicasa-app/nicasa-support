@@ -100,7 +100,7 @@ export default defineConfig({
             { text: 'Documentation', link: '/guide/introduction' },
             { text: 'FAQ', link: '/guide/faq' },
             { text: 'Troubleshooting', link: '/guide/troubleshooting' },
-            { text: 'Contact', link: 'mailto:support@nicasa.app' }
+            { text: 'Contact', link: 'mailto:nicasa@w3cub.com' }
           ]
         },
         {
