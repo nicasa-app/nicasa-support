@@ -75,6 +75,7 @@ export default defineConfig({
         text: 'Legal',
         items: [
           { text: 'Privacy Policy', link: '/guide/privacy' },
+          { text: 'Privacy Choices', link: '/guide/privacy-choices' },
           { text: 'Terms of Service', link: '/guide/terms' }
         ]
       }

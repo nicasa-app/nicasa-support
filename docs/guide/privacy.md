@@ -41,6 +41,18 @@ These permissions can be managed in System Settings > Privacy & Security.
 
 Nicasa does not integrate with any third-party analytics, advertising, or data collection services.
 
+### Privacy Choices
+
+If you wish to exercise privacy rights (for example: access, deletion, portability, or opt-out requests), or if you believe Nicasa has personal data about you, you can submit a request using one of the methods below:
+
+- Email: privacy@nicasa.w3cub.com
+- Open a privacy issue: https://github.com/nicasa-app/nicasa-support/issues
+- Use our hosted Privacy Choices page: /guide/privacy-choices
+
+Because Nicasa does not collect personal data as described above, many requests will be answered with a confirmation that no personal data is held. If we begin to collect personal data in future releases, this page and the hosted Privacy Choices form will provide a way to submit and track requests.
+
+We aim to respond to legitimate privacy requests within 30 days.
+
 ### Updates
 
 This privacy policy may be updated with new versions of the application. Users will be notified of any significant changes.
@@ -48,5 +60,3 @@ This privacy policy may be updated with new versions of the application. Users w
 ### Contact
 
 For privacy-related questions, please contact us through the [GitHub repository](https://github.com/nicasa-app/nicasa-support/issues).
-
-*Last updated: April 16, 2026*
