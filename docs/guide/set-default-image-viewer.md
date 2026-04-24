@@ -43,4 +43,3 @@ Tip: Change anytime in Finder: Get Info → Open with → Change All
 **Note**
 If you don’t see Nicasa in the list, please make sure Nicasa is installed correctly. You may need to relaunch Nicasa and try again.
 
-*Last updated: April 24, 2026*
