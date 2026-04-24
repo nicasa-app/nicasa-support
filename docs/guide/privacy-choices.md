@@ -19,7 +19,7 @@ Provide the following information when making a request to help us process it ef
 
 Send requests to one of the following:
 
-- Email: privacy@nicasa.w3cub.com
+- Email: nicasa@w3cub.com
 - Open a privacy issue: https://github.com/nicasa-app/nicasa-support/issues
 
 ## Response time
@@ -36,5 +36,5 @@ If you are exercising a jurisdictional right (for example under CCPA/CPRA) to op
 
 ## Contact
 
-If you have questions about this process, contact privacy@nicasa.w3cub.com or open an issue at https://github.com/nicasa-app/nicasa-support/issues.
+If you have questions about this process, contact nicasa@w3cub.com or open an issue at https://github.com/nicasa-app/nicasa-support/issues.
 

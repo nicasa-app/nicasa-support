@@ -45,7 +45,7 @@ Nicasa does not integrate with any third-party analytics, advertising, or data c
 
 If you wish to exercise privacy rights (for example: access, deletion, portability, or opt-out requests), or if you believe Nicasa has personal data about you, you can submit a request using one of the methods below:
 
-- Email: privacy@nicasa.w3cub.com
+- Email: nicasa@w3cub.com
 - Open a privacy issue: https://github.com/nicasa-app/nicasa-support/issues
 - Use our hosted Privacy Choices page: /guide/privacy-choices
 
