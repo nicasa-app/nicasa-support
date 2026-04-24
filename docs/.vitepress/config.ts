@@ -64,6 +64,7 @@ export default defineConfig({
           { text: 'Introduction', link: '/guide/introduction' },
           { text: 'Installation', link: '/guide/installation' },
           { text: 'Usage', link: '/guide/usage' },
+          { text: 'Set Default Image Viewer', link: '/guide/set-default-image-viewer' },
           { text: 'Finder Sync Extension', link: '/guide/finder-sync' },
           { text: 'Screen Recording Permission', link: '/guide/screen-recording' },
           { text: 'Troubleshooting', link: '/guide/troubleshooting' },

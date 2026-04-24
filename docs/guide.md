@@ -9,6 +9,7 @@ If you're new to Nicasa, start here:
 - **[Introduction](guide/introduction.md)** - Learn what Nicasa is and its key features
 - **[Installation](guide/installation.md)** - Download and install Nicasa on your system
 - **[Usage](guide/usage.md)** - Basic usage guide and keyboard shortcuts
+ - **[Set Nicasa as Your Default Image Viewer](guide/set-default-image-viewer.md)** - How to associate image files with Nicasa
 
 ## Advanced Topics
 
@@ -32,6 +33,8 @@ Once you're familiar with the basics:
 | Troubleshooting | [guide/troubleshooting.md](guide/troubleshooting.md) |
 | FAQ | [guide/faq.md](guide/faq.md) |
 
+| Set Default Viewer | [Set Nicasa as Your Default Image Viewer](guide/set-default-image-viewer.md) |
+
 ---
 
-*Last updated: December 11, 2025*
+*Last updated: April 24, 2026*
