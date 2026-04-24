@@ -25,6 +25,18 @@ Nicasa is available exclusively for macOS through the Mac App Store. The app cos
 3. Confirm the installation in the popup
 4. The extension will be added to your browser
 
+#### Chrome Extension Demo
+
+<div style="position:relative;padding-bottom:56.25%;height:0;">
+	<iframe src="https://www.youtube.com/embed/NJPweIr1J4s" frameborder="0"
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+		allowfullscreen
+		style="position:absolute;top:0;left:0;width:100%;height:100%;">
+	</iframe>
+</div>
+
+<p><a href="https://www.youtube.com/watch?v=NJPweIr1J4s" target="_blank" rel="noopener">Watch: Nicasa Chrome Extension — Quick Demo</a></p>
+
 ## First Launch
 
 When you launch Nicasa for the first time:
