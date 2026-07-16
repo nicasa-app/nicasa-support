@@ -49,6 +49,7 @@ export default defineConfig({
       { text: 'Guide', link: '/guide/introduction' },
       { text: 'FAQ', link: '/guide/faq' },
       { text: 'Changelog', link: 'https://github.com/nicasa-project/nicasa-support/blob/main/CHANGELOG.md' },
+      { text: 'Product Hunt', link: 'https://www.producthunt.com/products/nicasa-image-viewer?utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-nicasa-image-viewer-2' },
       {
         text: 'Download',
         items: [
@@ -111,7 +112,8 @@ export default defineConfig({
             { text: 'About', link: '/guide/introduction' },
             { text: 'Privacy Policy', link: '/guide/privacy' },
             { text: 'Terms of Service', link: '/guide/terms' },
-            { text: 'GitHub', link: 'https://github.com/nicasa-project' }
+            { text: 'GitHub', link: 'https://github.com/nicasa-project' },
+            { text: 'Product Hunt', link: 'https://www.producthunt.com/products/nicasa-image-viewer?utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-nicasa-image-viewer-2' }
           ]
         }
       ]

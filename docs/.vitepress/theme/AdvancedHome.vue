@@ -178,6 +178,7 @@
               <h4 class="footer-heading">Community</h4>
               <a href="https://github.com/nicasa-project/nicasa-support" class="footer-link">GitHub</a>
               <a href="https://github.com/nicasa-project/nicasa-support/blob/main/CHANGELOG.md" class="footer-link">Changelog</a>
+              <a href="https://www.producthunt.com/products/nicasa-image-viewer?utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-nicasa-image-viewer-2" class="footer-link" target="_blank" rel="noopener noreferrer">Product Hunt</a>
             </div>
           </div>
         </div>

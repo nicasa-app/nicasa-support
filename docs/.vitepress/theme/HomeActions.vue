@@ -30,5 +30,20 @@ import { withBase } from 'vitepress'
         height="46"
       />
     </a>
+    <a
+      href="https://www.producthunt.com/products/nicasa-image-viewer?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-nicasa-image-viewer-2"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="store-badge-link"
+      aria-label="Nicasa Image Viewer on Product Hunt"
+    >
+      <img
+        src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1153935&theme=light&t=1784197580234"
+        alt="Nicasa Image Viewer - Nicasa brings a smooth, modern image-viewing experience. | Product Hunt"
+        class="store-badge"
+        width="250"
+        height="54"
+      />
+    </a>
   </div>
 </template>
