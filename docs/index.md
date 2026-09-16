@@ -6,7 +6,7 @@ hero:
   text: "See every image, instantly."
   tagline: "A native macOS app and Chrome extension built for fast, focused image browsing. Mac app requires purchase, Chrome extension is free."
   image:
-    src: /hero-illustration.svg
+    src: /hero-illustration.png
     alt: Nicasa Image Viewer Illustration
   actions:
     - theme: brand
