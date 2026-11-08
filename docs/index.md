@@ -77,5 +77,51 @@ features:
     details: Built on native macOS APIs for smooth, low-latency performance on Apple Silicon.
     link: /guide/introduction
     linkText: About Nicasa
+
+home:
+  floatingCards:
+    - Image Viewer
+    - Lightning Fast
+    - AI Enhanced
+  sections:
+    featuresTitle: Powerful Features
+    featuresSubtitle: Everything you need for instant image viewing
+    testimonialsTitle: Loved by Users
+    testimonialsSubtitle: Real feedback from our community
+    faqTitle: Frequently Asked Questions
+    faqSubtitle: Quick answers to common questions
+  testimonials:
+    - name: Alex Johnson
+      role: Designer
+      text: Nicasa has transformed how I browse images online. It's incredibly fast and intuitive.
+    - name: Sarah Chen
+      role: Photographer
+      text: The AI enhancement features are a game-changer. No more blurry images!
+    - name: Mike Rodriguez
+      role: Developer
+      text: As a developer, I love the distraction-free interface. Pure focus on the content.
+  faqs:
+    - question: Is Nicasa free?
+      answer: The Chrome extension is completely free to download and use. The macOS app requires a one-time purchase for full access to all features.
+    - question: Does it work on all websites?
+      answer: Nicasa works on most standard websites. Some sites with strict content security policies may limit image extraction.
+    - question: Is my data uploaded anywhere?
+      answer: No. All processing happens locally on your device. Nicasa does not collect, transmit, or store your images.
+    - question: Does it support offline viewing?
+      answer: Yes. The macOS app works fully offline for local image files. Web image extraction requires an active connection.
+    - question: Which macOS versions are supported?
+      answer: Nicasa supports macOS 12 Monterey and later. It is optimized for Apple Silicon and runs natively on M-series chips.
+    - question: What permissions does the Chrome extension need?
+      answer: The extension requests access to page content solely to extract image URLs. No browsing history is read or stored.
+  cta:
+    title: Ready to Experience Instant Image Viewing?
+    description: Join thousands of users who have discovered a better way to browse images.
+    primary: Purchase for macOS
+    primaryLink: /guide/installation
+    secondary: Free Chrome Extension
+    secondaryLink: /guide/installation
+  footer:
+    tagline: See every image, instantly.
+    copyright: © 2026 Nicasa Project. Built with ❤️ for image enthusiasts.
 ---
 

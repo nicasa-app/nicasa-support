@@ -4,7 +4,7 @@
     <nav class="navbar">
       <div class="nav-container">
         <div class="nav-brand">
-          <VPLink href="/" class="brand-link">
+          <VPLink :href="homeLink" class="brand-link">
             <img src="/logo.png" alt="Nicasa Logo" class="brand-logo" />
             <span class="brand-text">Nicasa</span>
           </VPLink>
@@ -13,6 +13,7 @@
           <div class="nav-links">
             <VPNavBarMenu />
           </div>
+          <VPNavBarTranslations class="nav-lang" />
           <VPSwitchAppearance class="nav-appearance" />
         </div>
       </div>
@@ -33,17 +34,14 @@
           </div>
           <div class="hero-visual">
             <div class="floating-elements">
-              <div class="floating-card card-1">
-                <div class="card-icon">🖼️</div>
-                <div class="card-text">Image Viewer</div>
-              </div>
-              <div class="floating-card card-2">
-                <div class="card-icon">⚡</div>
-                <div class="card-text">Lightning Fast</div>
-              </div>
-              <div class="floating-card card-3">
-                <div class="card-icon">🎨</div>
-                <div class="card-text">AI Enhanced</div>
+              <div
+                v-for="(card, i) in home.floatingCards"
+                :key="i"
+                class="floating-card"
+                :class="`card-${i + 1}`"
+              >
+                <div class="card-icon">{{ FLOAT_ICONS[i % FLOAT_ICONS.length] }}</div>
+                <div class="card-text">{{ card }}</div>
               </div>
             </div>
             <div class="hero-image">
@@ -59,8 +57,8 @@
     <section class="features-section">
       <div class="features-container">
         <div class="section-header">
-          <h2 class="section-title">Powerful Features</h2>
-          <p class="section-subtitle">Everything you need for instant image viewing</p>
+          <h2 class="section-title">{{ home.sections.featuresTitle }}</h2>
+          <p class="section-subtitle">{{ home.sections.featuresSubtitle }}</p>
         </div>
         <div class="features-grid">
           <div v-for="(feature, index) in data.features" :key="feature.title"
@@ -72,7 +70,7 @@
             </div>
             <h3 class="feature-title">{{ feature.title }}</h3>
             <p class="feature-description">{{ feature.details }}</p>
-            <a v-if="feature.link" :href="feature.link" class="feature-link">{{ feature.linkText }}</a>
+            <a v-if="feature.link" :href="lp(feature.link)" class="feature-link">{{ feature.linkText }}</a>
           </div>
         </div>
       </div>
@@ -82,40 +80,18 @@
     <section class="testimonials-section">
       <div class="testimonials-container">
         <div class="section-header">
-          <h2 class="section-title">Loved by Users</h2>
-          <p class="section-subtitle">Real feedback from our community</p>
+          <h2 class="section-title">{{ home.sections.testimonialsTitle }}</h2>
+          <p class="section-subtitle">{{ home.sections.testimonialsSubtitle }}</p>
         </div>
         <div class="testimonials-grid">
-          <div class="testimonial-card">
+          <div class="testimonial-card" v-for="(t, i) in home.testimonials" :key="i">
             <div class="testimonial-quote">"</div>
-            <p class="testimonial-text">Nicasa has transformed how I browse images online. It's incredibly fast and intuitive.</p>
+            <p class="testimonial-text">{{ t.text }}</p>
             <div class="testimonial-author">
-              <div class="author-avatar">A</div>
+              <div class="author-avatar">{{ (t.name || '?').charAt(0) }}</div>
               <div class="author-info">
-                <div class="author-name">Alex Johnson</div>
-                <div class="author-role">Designer</div>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-quote">"</div>
-            <p class="testimonial-text">The AI enhancement features are a game-changer. No more blurry images!</p>
-            <div class="testimonial-author">
-              <div class="author-avatar">S</div>
-              <div class="author-info">
-                <div class="author-name">Sarah Chen</div>
-                <div class="author-role">Photographer</div>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-quote">"</div>
-            <p class="testimonial-text">As a developer, I love the distraction-free interface. Pure focus on the content.</p>
-            <div class="testimonial-author">
-              <div class="author-avatar">M</div>
-              <div class="author-info">
-                <div class="author-name">Mike Rodriguez</div>
-                <div class="author-role">Developer</div>
+                <div class="author-name">{{ t.name }}</div>
+                <div class="author-role">{{ t.role }}</div>
               </div>
             </div>
           </div>
@@ -127,11 +103,11 @@
     <section class="faq-section">
       <div class="faq-container">
         <div class="section-header">
-          <h2 class="section-title">Frequently Asked Questions</h2>
-          <p class="section-subtitle">Quick answers to common questions</p>
+          <h2 class="section-title">{{ home.sections.faqTitle }}</h2>
+          <p class="section-subtitle">{{ home.sections.faqSubtitle }}</p>
         </div>
         <div class="faq-grid">
-          <div v-for="faq in faqs" :key="faq.question" class="faq-item">
+          <div v-for="faq in home.faqs" :key="faq.question" class="faq-item">
             <details class="faq-details">
               <summary class="faq-question">{{ faq.question }}</summary>
               <div class="faq-answer">{{ faq.answer }}</div>
@@ -145,11 +121,11 @@
     <section class="cta-section">
       <div class="cta-container">
         <div class="cta-content">
-          <h2 class="cta-title">Ready to Experience Instant Image Viewing?</h2>
-          <p class="cta-description">Join thousands of users who have discovered a better way to browse images.</p>
+          <h2 class="cta-title">{{ home.cta.title }}</h2>
+          <p class="cta-description">{{ home.cta.description }}</p>
           <div class="cta-actions">
-            <a href="/guide/installation" class="btn btn-primary">Purchase for macOS</a>
-            <a href="/guide/installation" class="btn btn-secondary">Free Chrome Extension</a>
+            <a :href="lp(home.cta.primaryLink)" class="btn btn-primary">{{ home.cta.primary }}</a>
+            <a :href="lp(home.cta.secondaryLink)" class="btn btn-secondary">{{ home.cta.secondary }}</a>
           </div>
         </div>
       </div>
@@ -161,32 +137,24 @@
         <div class="footer-content">
           <div class="footer-brand">
             <div class="footer-logo">Nicasa</div>
-            <p class="footer-tagline">See every image, instantly.</p>
+            <p class="footer-tagline">{{ home.footer.tagline }}</p>
           </div>
           <div class="footer-links">
-            <div class="footer-column">
-              <h4 class="footer-heading">Product</h4>
-              <a href="/guide/installation" class="footer-link">Mac App</a>
-              <a href="/guide/installation" class="footer-link">Chrome Extension</a>
-              <a href="/#features" class="footer-link">Features</a>
-              <a href="/guide/installation" class="footer-link">Pricing</a>
-            </div>
-            <div class="footer-column">
-              <h4 class="footer-heading">Support</h4>
-              <a href="/guide/introduction" class="footer-link">Guide</a>
-              <a href="/guide/faq" class="footer-link">FAQ</a>
-              <a href="/guide/troubleshooting" class="footer-link">Troubleshooting</a>
-            </div>
-            <div class="footer-column">
-              <h4 class="footer-heading">Community</h4>
-              <a href="https://github.com/nicasa-project/nicasa-support" class="footer-link">GitHub</a>
-              <a href="https://github.com/nicasa-project/nicasa-support/blob/main/CHANGELOG.md" class="footer-link">Changelog</a>
-              <a href="https://www.producthunt.com/products/nicasa-image-viewer?utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-nicasa-image-viewer-2" class="footer-link" target="_blank" rel="noopener noreferrer">Product Hunt</a>
+            <div class="footer-column" v-for="col in home.footer.columns" :key="col.heading">
+              <h4 class="footer-heading">{{ col.heading }}</h4>
+              <a
+                v-for="item in col.links"
+                :key="item.link"
+                :href="lp(item.link)"
+                class="footer-link"
+                :target="lp(item.link).startsWith('http') ? '_blank' : undefined"
+                :rel="lp(item.link).startsWith('http') ? 'noopener noreferrer' : undefined"
+              >{{ item.text }}</a>
             </div>
           </div>
         </div>
         <div class="footer-bottom">
-          <p class="footer-copyright">© 2026 Nicasa Project. Built with ❤️ for image enthusiasts.</p>
+          <p class="footer-copyright">{{ home.footer.copyright }}</p>
         </div>
       </div>
     </footer>
@@ -194,18 +162,128 @@
 </template>
 
 <script setup lang="ts">
-import { withBase } from 'vitepress'
+import { computed } from 'vue'
+import { withBase, useData } from 'vitepress'
 import HomeActions from './HomeActions.vue'
 import { VPLink } from 'vitepress/theme'
 import VPNavBarMenu from 'vitepress/dist/client/theme-default/components/VPNavBarMenu.vue'
 import VPSwitchAppearance from 'vitepress/dist/client/theme-default/components/VPSwitchAppearance.vue'
+import VPNavBarTranslations from 'vitepress/dist/client/theme-default/components/VPNavBarTranslations.vue'
 
 interface Props {
   data: any
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
 
+const { lang } = useData()
+
+// ── English defaults (root / English homepage) ───────────────────
+// All copy lives in the markdown frontmatter under `home:`; these
+// constants keep the English site rendering if that block is missing.
+const FLOAT_ICONS = ['🖼️', '⚡', '🎨']
+
+const DEFAULT_FLOATING = ['Image Viewer', 'Lightning Fast', 'AI Enhanced']
+
+const DEFAULT_SECTIONS = {
+  featuresTitle: 'Powerful Features',
+  featuresSubtitle: 'Everything you need for instant image viewing',
+  testimonialsTitle: 'Loved by Users',
+  testimonialsSubtitle: 'Real feedback from our community',
+  faqTitle: 'Frequently Asked Questions',
+  faqSubtitle: 'Quick answers to common questions',
+}
+
+const DEFAULT_TESTIMONIALS = [
+  { name: 'Alex Johnson', role: 'Designer', text: "Nicasa has transformed how I browse images online. It's incredibly fast and intuitive." },
+  { name: 'Sarah Chen', role: 'Photographer', text: 'The AI enhancement features are a game-changer. No more blurry images!' },
+  { name: 'Mike Rodriguez', role: 'Developer', text: 'As a developer, I love the distraction-free interface. Pure focus on the content.' },
+]
+
+const DEFAULT_FAQS = [
+  {
+    question: 'Is Nicasa free?',
+    answer: 'The Chrome extension is completely free to download and use. The macOS app requires a one-time purchase for full access to all features.',
+  },
+  {
+    question: 'Does it work on all websites?',
+    answer: 'Nicasa works on most standard websites. Some sites with strict content security policies may limit image extraction.',
+  },
+  {
+    question: 'Is my data uploaded anywhere?',
+    answer: 'No. All processing happens locally on your device. Nicasa does not collect, transmit, or store your images.',
+  },
+  {
+    question: 'Does it support offline viewing?',
+    answer: 'Yes. The macOS app works fully offline for local image files. Web image extraction requires an active connection.',
+  },
+  {
+    question: 'Which macOS versions are supported?',
+    answer: 'Nicasa supports macOS 12 Monterey and later. It is optimized for Apple Silicon and runs natively on M-series chips.',
+  },
+  {
+    question: 'What permissions does the Chrome extension need?',
+    answer: 'The extension requests access to page content solely to extract image URLs. No browsing history is read or stored.',
+  },
+]
+
+const DEFAULT_CTA = {
+  title: 'Ready to Experience Instant Image Viewing?',
+  description: 'Join thousands of users who have discovered a better way to browse images.',
+  primary: 'Purchase for macOS',
+  primaryLink: '/guide/installation',
+  secondary: 'Free Chrome Extension',
+  secondaryLink: '/guide/installation',
+}
+
+const DEFAULT_FOOTER = {
+  tagline: 'See every image, instantly.',
+  columns: [
+    {
+      heading: 'Product',
+      links: [
+        { text: 'Mac App', link: '/guide/installation' },
+        { text: 'Chrome Extension', link: '/guide/installation' },
+        { text: 'Features', link: '/#features' },
+        { text: 'Pricing', link: '/guide/installation' },
+      ],
+    },
+    {
+      heading: 'Support',
+      links: [
+        { text: 'Guide', link: '/guide/introduction' },
+        { text: 'FAQ', link: '/guide/faq' },
+        { text: 'Troubleshooting', link: '/guide/troubleshooting' },
+      ],
+    },
+    {
+      heading: 'Community',
+      links: [
+        { text: 'GitHub', link: 'https://github.com/nicasa-project/nicasa-support' },
+        { text: 'Changelog', link: 'https://github.com/nicasa-project/nicasa-support/blob/main/CHANGELOG.md' },
+        { text: 'Product Hunt', link: 'https://www.producthunt.com/products/nicasa-image-viewer?utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-nicasa-image-viewer-2' },
+      ],
+    },
+  ],
+  copyright: '© 2026 Nicasa Project. Built with ❤️ for image enthusiasts.',
+}
+
+const home = computed(() => {
+  const d = props.data?.home || {}
+  const f = d.footer || {}
+  return {
+    floatingCards: d.floatingCards || DEFAULT_FLOATING,
+    sections: { ...DEFAULT_SECTIONS, ...(d.sections || {}) },
+    testimonials: d.testimonials || DEFAULT_TESTIMONIALS,
+    faqs: d.faqs || DEFAULT_FAQS,
+    cta: { ...DEFAULT_CTA, ...(d.cta || {}) },
+    footer: {
+      tagline: f.tagline || DEFAULT_FOOTER.tagline,
+      columns: f.columns || DEFAULT_FOOTER.columns,
+      copyright: f.copyright || DEFAULT_FOOTER.copyright,
+    },
+  }
+})
 
 // Feature colors for icons
 const featureColors = [
@@ -217,33 +295,19 @@ const featureColors = [
   '#06b6d4'  // cyan
 ]
 
-// FAQ data
-const faqs = [
-  {
-    question: "Is Nicasa free?",
-    answer: "The Chrome extension is completely free to download and use. The macOS app requires a one-time purchase for full access to all features."
-  },
-  {
-    question: "Does it work on all websites?",
-    answer: "Nicasa works on most standard websites. Some sites with strict content security policies may limit image extraction."
-  },
-  {
-    question: "Is my data uploaded anywhere?",
-    answer: "No. All processing happens locally on your device. Nicasa does not collect, transmit, or store your images."
-  },
-  {
-    question: "Does it support offline viewing?",
-    answer: "Yes. The macOS app works fully offline for local image files. Web image extraction requires an active connection."
-  },
-  {
-    question: "Which macOS versions are supported?",
-    answer: "Nicasa supports macOS 12 Monterey and later. It is optimized for Apple Silicon and runs natively on M-series chips."
-  },
-  {
-    question: "What permissions does the Chrome extension need?",
-    answer: "The extension requests access to page content solely to extract image URLs. No browsing history is read or stored."
-  }
-]
+// Prefix a root-relative internal link with the current locale segment.
+function lp(p: string): string {
+  if (!p) return p
+  if (/^https?:\/\//.test(p) || p.startsWith('mailto:')) return p
+  if (!lang.value || lang.value === 'en') return p
+  if (p.startsWith('/' + lang.value + '/')) return p
+  return '/' + lang.value + p
+}
+
+// Locale-aware home link for the brand logo.
+const homeLink = computed(() =>
+  !lang.value || lang.value === 'en' ? '/' : `/${lang.value}/`
+)
 </script>
 
 <style scoped>
@@ -313,6 +377,11 @@ const faqs = [
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+.nav-lang {
+  display: flex;
+  align-items: center;
 }
 
 .nav-appearance {

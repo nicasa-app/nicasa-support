@@ -1,0 +1,126 @@
+---
+layout: home
+
+hero:
+  name: "Nicasa"
+  text: "Jedes Bild, sofort."
+  tagline: "Eine native macOS-App und eine Chrome-Erweiterung für schnelles, fokussiertes Bildbetrachten. Die Mac-App ist kostenpflichtig, die Chrome-Erweiterung ist kostenlos."
+  image:
+    src: /hero-illustration.png
+    alt: Nicasa Image Viewer Illustration
+  actions:
+    - theme: brand
+      text: Für macOS kaufen
+      link: /de/guide/installation
+    - theme: alt
+      text: Kostenlose Chrome-Erweiterung
+      link: /de/guide/installation
+
+features:
+  - icon:
+      light: /icons/eye.svg
+      dark: /icons/eye-dark.svg
+      alt: Auge
+      width: "24"
+      height: "24"
+    title: Bilder sofort ansehen
+    details: Öffne jedes Bild in Millisekunden. Keine Ladebildschirme, kein Warten. Nur das Bild.
+    link: /de/guide/usage
+    linkText: So funktioniert es
+  - icon:
+      light: /icons/layers.svg
+      dark: /icons/layers-dark.svg
+      alt: Ebenen
+      width: "24"
+      height: "24"
+    title: Intelligente Bilderfassung
+    details: Erkenne und zeige alle Bilder auf jeder Webseite mit einem einzigen Klick.
+    link: /de/guide/usage
+    linkText: Mehr erfahren
+  - icon:
+      light: /icons/sparkles.svg
+      dark: /icons/sparkles-dark.svg
+      alt: Glanz
+      width: "24"
+      height: "24"
+    title: Bildverbesserung mit KI
+    details: Schärfe, vergrößere oder entrausche Bilder lokal auf dem Gerät. Keine Cloud nötig.
+    link: /de/guide/usage
+    linkText: Mehr erfahren
+  - icon:
+      light: /icons/camera.svg
+      dark: /icons/camera-dark.svg
+      alt: Kamera
+      width: "24"
+      height: "24"
+    title: Screenshots und Aufnahmen
+    details: Erfasse ganze Seiten, Auswahlbereiche oder einzelne Elemente pixelgenau.
+    link: /de/guide/usage
+    linkText: Mehr erfahren
+  - icon:
+      light: /icons/frame.svg
+      dark: /icons/frame-dark.svg
+      alt: Rahmen
+      width: "24"
+      height: "24"
+    title: Ablenkungsfreie Oberfläche
+    details: Eine klare, minimalistische Oberfläche, die deinen Fokus ganz auf die Bilder richtet.
+    link: /de/guide/introduction
+    linkText: Über Nicasa
+  - icon:
+      light: /icons/zap.svg
+      dark: /icons/zap-dark.svg
+      alt: Blitz
+      width: "24"
+      height: "24"
+    title: Hohe Leistung
+    details: Auf nativen macOS-APIs gebaut für flüssige, latenzarme Performance auf Apple Silicon.
+    link: /de/guide/introduction
+    linkText: Über Nicasa
+
+home:
+  floatingCards:
+    - Bildbetrachter
+    - Blitzschnell
+    - KI-verbessert
+  sections:
+    featuresTitle: Leistungsstarke Funktionen
+    featuresSubtitle: Alles, was du zum sofortigen Betrachten von Bildern brauchst
+    testimonialsTitle: Von Nutzern geschätzt
+    testimonialsSubtitle: Echtes Feedback aus unserer Community
+    faqTitle: Häufig gestellte Fragen
+    faqSubtitle: Schnelle Antworten auf häufige Fragen
+  testimonials:
+    - name: Alex Johnson
+      role: Designer
+      text: Nicasa hat verändert, wie ich Bilder im Web ansehe. Unglaublich schnell und intuitiv.
+    - name: Sarah Chen
+      role: Fotografin
+      text: Die KI-Verbesserungen sind ein Wendepunkt. Keine unscharfen Bilder mehr!
+    - name: Mike Rodriguez
+      role: Entwickler
+      text: Als Entwickler liebe ich die ablenkungsfreie Oberfläche. Volle Konzentration auf den Inhalt.
+  faqs:
+    - question: Ist Nicasa kostenlos?
+      answer: Die Chrome-Erweiterung ist völlig kostenlos. Die macOS-App erfordert einen einmaligen Kauf für den vollen Funktionsumfang.
+    - question: Funktioniert es auf allen Webseiten?
+      answer: Nicasa funktioniert auf den meisten Standard-Webseiten. Seiten mit strengen Content-Security-Policies können die Bilderfassung einschränken.
+    - question: Werden meine Daten irgendwohin hochgeladen?
+      answer: Nein. Die gesamte Verarbeitung erfolgt lokal auf deinem Gerät. Nicasa sammelt, überträgt oder speichert deine Bilder nicht.
+    - question: Funktioniert es offline?
+      answer: Ja. Die macOS-App funktioniert bei lokalen Bilddateien vollständig offline. Das Extrahieren von Webbildern erfordert eine Verbindung.
+    - question: Welche macOS-Versionen werden unterstützt?
+      answer: Nicasa unterstützt macOS 12 Monterey und neuer. Es ist für Apple Silicon optimiert und läuft nativ auf Chips der M-Serie.
+    - question: Welche Berechtigungen braucht die Chrome-Erweiterung?
+      answer: Die Erweiterung fordert Zugriff auf Seiteninhalte ausschließlich zum Extrahieren von Bild-URLs an. Der Browserverlauf wird weder gelesen noch gespeichert.
+  cta:
+    title: Bereit für sofortiges Bildbetrachten?
+    description: Schließe dich Tausenden Nutzern an, die einen besseren Weg gefunden haben, Bilder anzusehen.
+    primary: Für macOS kaufen
+    primaryLink: /de/guide/installation
+    secondary: Kostenlose Chrome-Erweiterung
+    secondaryLink: /de/guide/installation
+  footer:
+    tagline: Jedes Bild, sofort.
+    copyright: © 2026 Nicasa Project. Mit ❤️ für Bildbegeisterte gebaut.
+---
