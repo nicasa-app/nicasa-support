@@ -246,6 +246,9 @@ export default defineConfig({
     ['meta', { name: 'keywords', content: 'nicasa, image viewer, mac app, chrome extension, image browsing, photo viewer' }],
     ['meta', { name: 'author', content: 'Nicasa Project' }],
 
+    // Google Search Console 站点验证
+    ['meta', { name: 'google-site-verification', content: 'YkMfNFTj0whkftafDGOLhSyyoNEawXMo4EiPB-Gr8QU' }],
+
     // Open Graph / Facebook
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:site_name', content: 'Nicasa' }],
